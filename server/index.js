@@ -22,10 +22,6 @@ app.post("/todos", async(req, res) => {
     }
 });
 
-app.listen(5000, () => {
-    console.log("server has started on port 5000")
-});
-
 //get all todo
 app.get("/todos", async(req, res) => {
     try{
@@ -77,3 +73,7 @@ app.delete("/todos/:id", async (req, res) => {
         console.log(err.message);
     }
 })
+
+app.listen(5000, () => {
+    console.log("server has started on port 5000")
+});
