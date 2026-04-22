@@ -75,6 +75,10 @@ app.delete("/todos/:id", async (req, res) => {
     }
 })
 
+app.get("/", (req, res) => {
+    res.send("Backend is running");
+});//testing for render deploy
+
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
     console.log(`server has started on port ${PORT}`)
