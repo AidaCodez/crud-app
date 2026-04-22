@@ -1,11 +1,11 @@
+require('dotenv').config(); //load var from .env file into process.env locally
 const Pool = require("pg").Pool;
 
 const pool = new Pool({
-    user: "postgres",
-    password: "a4a4",
-    host: "localhost",
-    port: 5432,
-    database: "perntodo"
+    connectionString: process.env.DB_URL, //Render use this config connect string
+    ssl:{
+        rejectUnauthorized: false
+    }
 });
 
 module.exports = pool;
